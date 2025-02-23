@@ -52,6 +52,14 @@ semantiva.specializations.image.image\_probes module
    :undoc-members:
    :show-inheritance:
 
+semantiva.specializations.image.image\_viewers module
+-----------------------------------------------------
+
+.. automodule:: semantiva.specializations.image.image_viewers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

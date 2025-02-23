@@ -4,14 +4,6 @@ semantiva.data\_operations package
 Submodules
 ----------
 
-semantiva.data\_operations.data\_collection\_fit\_probe module
---------------------------------------------------------------
-
-.. automodule:: semantiva.data_operations.data_collection_fit_probe
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 semantiva.data\_operations.data\_operations module
 --------------------------------------------------
 

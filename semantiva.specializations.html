@@ -48,6 +48,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">semantiva</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="semantiva.html">semantiva package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="semantiva.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="semantiva.component_loader.html">semantiva.component_loader package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.configurations.html">semantiva.configurations package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="semantiva.context_operations.html">semantiva.context_operations package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="semantiva.data_io.html">semantiva.data_io package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="semantiva.data_operations.html">semantiva.data_operations package</a></li>
@@ -195,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="semantiva.specializations.image.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="semantiva.specializations.image.html#module-semantiva.specializations.image.image_algorithms">semantiva.specializations.image.image_algorithms module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageAddition"><code class="docutils literal notranslate"><span class="pre">ImageAddition</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageClipping"><code class="docutils literal notranslate"><span class="pre">ImageClipping</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageCropper"><code class="docutils literal notranslate"><span class="pre">ImageCropper</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageNormalizerAlgorithm"><code class="docutils literal notranslate"><span class="pre">ImageNormalizerAlgorithm</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageStackToSideBySideProjector"><code class="docutils literal notranslate"><span class="pre">ImageStackToSideBySideProjector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageSubtraction"><code class="docutils literal notranslate"><span class="pre">ImageSubtraction</span></code></a></li>
@@ -261,6 +263,10 @@
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.NpzImageStackDataLoader"><code class="docutils literal notranslate"><span class="pre">NpzImageStackDataLoader</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.NpzImageStackDataSaver"><code class="docutils literal notranslate"><span class="pre">NpzImageStackDataSaver</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.PNGImageStackSaver"><code class="docutils literal notranslate"><span class="pre">PNGImageStackSaver</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator"><code class="docutils literal notranslate"><span class="pre">ParametricImageStackGenerator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator.t_values"><code class="docutils literal notranslate"><span class="pre">ParametricImageStackGenerator.t_values</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.PngImageLoader"><code class="docutils literal notranslate"><span class="pre">PngImageLoader</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.PngImageSaver"><code class="docutils literal notranslate"><span class="pre">PngImageSaver</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.TwoDGaussianImageGenerator"><code class="docutils literal notranslate"><span class="pre">TwoDGaussianImageGenerator</span></code></a></li>
@@ -305,6 +311,47 @@
 <li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe"><code class="docutils literal notranslate"><span class="pre">TwoDGaussianFitterProbe</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe.calculate_r_squared"><code class="docutils literal notranslate"><span class="pre">TwoDGaussianFitterProbe.calculate_r_squared()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe.two_d_gaussian"><code class="docutils literal notranslate"><span class="pre">TwoDGaussianFitterProbe.two_d_gaussian()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.None"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe.None</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.two_d_gaussian"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe.two_d_gaussian()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.estimate_initial_params"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe.estimate_initial_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.calculate_r_squared"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe.calculate_r_squared()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe._operation"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe._operation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#id8"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe.calculate_r_squared()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#id9"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe.estimate_initial_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.normalize_angle_180"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe.normalize_angle_180()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#id10"><code class="docutils literal notranslate"><span class="pre">TwoDTiltedGaussianFitterProbe.two_d_gaussian()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="semantiva.specializations.image.html#module-semantiva.specializations.image.image_viewers">semantiva.specializations.image.image_viewers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.FigureOption"><code class="docutils literal notranslate"><span class="pre">FigureOption</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.FigureOption.figsize"><code class="docutils literal notranslate"><span class="pre">FigureOption.figsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.FigureOption.labelsize"><code class="docutils literal notranslate"><span class="pre">FigureOption.labelsize</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer"><code class="docutils literal notranslate"><span class="pre">ImageCrossSectionInteractiveViewer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer.view"><code class="docutils literal notranslate"><span class="pre">ImageCrossSectionInteractiveViewer.view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageInteractiveViewer"><code class="docutils literal notranslate"><span class="pre">ImageInteractiveViewer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageInteractiveViewer.FIGURE_OPTIONS"><code class="docutils literal notranslate"><span class="pre">ImageInteractiveViewer.FIGURE_OPTIONS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageInteractiveViewer.view"><code class="docutils literal notranslate"><span class="pre">ImageInteractiveViewer.view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageStackAnimator"><code class="docutils literal notranslate"><span class="pre">ImageStackAnimator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageStackAnimator.view"><code class="docutils literal notranslate"><span class="pre">ImageStackAnimator.view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageViewer"><code class="docutils literal notranslate"><span class="pre">ImageViewer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageViewer.view"><code class="docutils literal notranslate"><span class="pre">ImageViewer.view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageXYProjectionViewer"><code class="docutils literal notranslate"><span class="pre">ImageXYProjectionViewer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageXYProjectionViewer.view"><code class="docutils literal notranslate"><span class="pre">ImageXYProjectionViewer.view()</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -107,13 +107,15 @@
         <li><a href="semantiva.specializations.audio.html#semantiva.specializations.audio.audio_data_types.SingleChannelAudioDataType._data">(semantiva.specializations.audio.audio_data_types.SingleChannelAudioDataType attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSource._get_data">_get_data() (semantiva.data_io.data_io.DataSource method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="semantiva.data_io.html#semantiva.data_io.data_io.PayloadSource._get_payload">_get_payload() (semantiva.data_io.data_io.PayloadSource method)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeResultCollectorNode._probed_data">_probed_data (semantiva.payload_operations.payload_operations.ProbeResultCollectorNode attribute)</a>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe._operation">_operation() (semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe method)</a>
+</li>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeResultCollectorNode._probed_data">_probed_data (semantiva.payload_operations.nodes.ProbeResultCollectorNode attribute)</a>
 </li>
       <li><a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSink._send_data">_send_data() (semantiva.data_io.data_io.DataSink method)</a>
 </li>
@@ -125,7 +127,7 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.AlgorithmNode">AlgorithmNode (class in semantiva.payload_operations.payload_operations)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.AlgorithmNode">AlgorithmNode (class in semantiva.payload_operations.nodes)</a>
 </li>
       <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.AlgorithmTopologyFactory">AlgorithmTopologyFactory (class in semantiva.data_operations.data_operations)</a>
 </li>
@@ -160,48 +162,54 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe.calculate_r_squared">calculate_r_squared() (semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe method)</a>
+
+      <ul>
+        <li><a href="semantiva.specializations.image.html#id8">(semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe method)</a>, <a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.calculate_r_squared">[1]</a>
 </li>
-      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.clear">clear() (semantiva.context_operations.context_types.ContextType method)</a>
+      </ul></li>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.clear">clear() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
+
+      <ul>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.clear">(semantiva.context_operations.context_types.ContextType method)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeResultCollectorNode.clear_collected_data">clear_collected_data() (semantiva.payload_operations.payload_operations.ProbeResultCollectorNode method)</a>
+      </ul></li>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeResultCollectorNode.clear_collected_data">clear_collected_data() (semantiva.payload_operations.nodes.ProbeResultCollectorNode method)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeResultCollectorNode.collect">collect() (semantiva.payload_operations.payload_operations.ProbeResultCollectorNode method)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeResultCollectorNode.collect">collect() (semantiva.payload_operations.nodes.ProbeResultCollectorNode method)</a>
 </li>
       <li><a href="semantiva.data_types.html#semantiva.data_types.data_types.DataCollectionType.collection_base_type">collection_base_type() (semantiva.data_types.data_types.DataCollectionType class method)</a>
+</li>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.ComponentLoader">ComponentLoader (class in semantiva.component_loader.component_loader)</a>
 </li>
       <li><a href="semantiva.execution_tools.html#semantiva.execution_tools.tasks.ComputingTask">ComputingTask (class in semantiva.execution_tools.tasks)</a>
 </li>
       <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.PayloadOperation.context">context (semantiva.payload_operations.payload_operations.PayloadOperation attribute)</a>
 </li>
-      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataAlgorithm.context_keys">context_keys() (semantiva.data_operations.data_operations.DataAlgorithm method)</a>
-</li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeContextInjectorNode.context_keyword">context_keyword (semantiva.payload_operations.payload_operations.ProbeContextInjectorNode attribute)</a>
-</li>
-      <li><a href="semantiva.data_operations.html#id0">context_observer (semantiva.data_operations.data_operations.DataAlgorithm attribute)</a>, <a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataAlgorithm.context_observer">[1]</a>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.context_deleter_factory">context_deleter_factory() (in module semantiva.component_loader.component_loader)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.payload_operations.html#id0">context_operation (semantiva.payload_operations.payload_operations.Node attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Node.context_operation">[1]</a>
-
-      <ul>
-        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeContextInjectorNode.context_operation">(semantiva.payload_operations.payload_operations.ProbeContextInjectorNode attribute)</a>
+      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataAlgorithm.context_keys">context_keys() (semantiva.data_operations.data_operations.DataAlgorithm method)</a>
 </li>
-      </ul></li>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeContextInjectorNode.context_keyword">context_keyword (semantiva.payload_operations.nodes.ProbeContextInjectorNode attribute)</a>
+</li>
+      <li><a href="semantiva.data_operations.html#id0">context_observer (semantiva.data_operations.data_operations.DataAlgorithm attribute)</a>, <a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataAlgorithm.context_observer">[1]</a>
+</li>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ContextNode.context_operation">context_operation (semantiva.payload_operations.nodes.ContextNode attribute)</a>
+</li>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.context_renamer_factory">context_renamer_factory() (in module semantiva.component_loader.component_loader)</a>
+</li>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType">ContextCollectionType (class in semantiva.context_operations.context_types)</a>
+</li>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ContextNode">ContextNode (class in semantiva.payload_operations.nodes)</a>
 </li>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_observer.ContextObserver">ContextObserver (class in semantiva.context_operations.context_observer)</a>
 </li>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextOperation">ContextOperation (class in semantiva.context_operations.context_operations)</a>
 </li>
-      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextPassthrough">ContextPassthrough (class in semantiva.context_operations.context_operations)</a>
-</li>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType">ContextType (class in semantiva.context_operations.context_types)</a>
 </li>
       <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.AlgorithmTopologyFactory.create_algorithm">create_algorithm() (semantiva.data_operations.data_operations.AlgorithmTopologyFactory class method)</a>
-</li>
-      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_collection_fit_probe.create_collection_feature_extraction_and_fit_probe">create_collection_feature_extraction_and_fit_probe() (in module semantiva.data_operations.data_collection_fit_probe)</a>
-</li>
-      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.create_data_collection_feature_extraction_probe">create_data_collection_feature_extraction_probe() (in module semantiva.data_operations.data_operations)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -219,32 +227,30 @@
         <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_types.ImageStackDataType.data">(semantiva.specializations.image.image_data_types.ImageStackDataType attribute)</a>
 </li>
       </ul></li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.AlgorithmNode.data_operation">data_operation (semantiva.payload_operations.payload_operations.AlgorithmNode attribute)</a>
-
-      <ul>
-        <li><a href="semantiva.payload_operations.html#id1">(semantiva.payload_operations.payload_operations.Node attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Node.data_operation">[1]</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.DataNode.data_operation">data_operation (semantiva.payload_operations.nodes.DataNode attribute)</a>
 </li>
-        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeContextInjectorNode.data_operation">(semantiva.payload_operations.payload_operations.ProbeContextInjectorNode attribute)</a>
-</li>
-      </ul></li>
       <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataAlgorithm">DataAlgorithm (class in semantiva.data_operations.data_operations)</a>
-</li>
-      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataCollectionFeatureExtractionProbe">DataCollectionFeatureExtractionProbe (class in semantiva.data_operations.data_operations)</a>
 </li>
       <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataCollectionProbe">DataCollectionProbe (class in semantiva.data_operations.data_operations)</a>
 </li>
       <li><a href="semantiva.data_types.html#semantiva.data_types.data_types.DataCollectionType">DataCollectionType (class in semantiva.data_types.data_types)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.DataNode">DataNode (class in semantiva.payload_operations.nodes)</a>
+</li>
       <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataProbe">DataProbe (class in semantiva.data_operations.data_operations)</a>
 </li>
       <li><a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSink">DataSink (class in semantiva.data_io.data_io)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSource">DataSource (class in semantiva.data_io.data_io)</a>
 </li>
-      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.delete_value">delete_value() (semantiva.context_operations.context_types.ContextType method)</a>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.delete_value">delete_value() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
+
+      <ul>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.delete_value">(semantiva.context_operations.context_types.ContextType method)</a>
 </li>
+      </ul></li>
       <li><a href="semantiva.specializations.audio.html#semantiva.specializations.audio.audio_operations.DualChannelAudioAlgorithm">DualChannelAudioAlgorithm (class in semantiva.specializations.audio.audio_operations)</a>
 </li>
       <li><a href="semantiva.specializations.audio.html#semantiva.specializations.audio.audio_data_types.DualChannelAudioDataType">DualChannelAudioDataType (class in semantiva.specializations.audio.audio_data_types)</a>
@@ -273,17 +279,27 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.stop_watch.StopWatch.elapsed_wall_time">elapsed_wall_time() (semantiva.payload_operations.stop_watch.StopWatch method)</a>
 </li>
+      <li><a href="semantiva.specializations.image.html#id9">estimate_initial_params() (semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe method)</a>, <a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.estimate_initial_params">[1]</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataCollectionFeatureExtractionProbe.feature_extractor">feature_extractor (semantiva.data_operations.data_operations.DataCollectionFeatureExtractionProbe attribute)</a>
+      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.FeatureExtractorProbeWrapper">FeatureExtractorProbeWrapper (class in semantiva.data_operations.data_operations)</a>
+</li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.FigureOption.figsize">figsize (semantiva.specializations.image.image_viewers.FigureOption attribute)</a>
+</li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageInteractiveViewer.FIGURE_OPTIONS">FIGURE_OPTIONS (semantiva.specializations.image.image_viewers.ImageInteractiveViewer attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.FigureOption">FigureOption (class in semantiva.specializations.image.image_viewers)</a>
+</li>
       <li><a href="semantiva.logger.html#semantiva.logger.logger.Logger.formatter">formatter (semantiva.logger.logger.Logger attribute)</a>
+</li>
+      <li><a href="semantiva.data_types.html#semantiva.data_types.data_types.DataCollectionType.from_list">from_list() (semantiva.data_types.data_types.DataCollectionType class method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -291,12 +307,30 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeResultCollectorNode.get_collected_data">get_collected_data() (semantiva.payload_operations.payload_operations.ProbeResultCollectorNode method)</a>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.ComponentLoader.get_class">get_class() (semantiva.component_loader.component_loader.ComponentLoader class method)</a>
+</li>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeResultCollectorNode.get_collected_data">get_collected_data() (semantiva.payload_operations.nodes.ProbeResultCollectorNode method)</a>
 </li>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextOperation.get_created_keys">get_created_keys() (semantiva.context_operations.context_operations.ContextOperation method)</a>
 
       <ul>
-        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextPassthrough.get_created_keys">(semantiva.context_operations.context_operations.ContextPassthrough method)</a>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ModelFittingContextOperation.get_created_keys">(semantiva.context_operations.context_operations.ModelFittingContextOperation method)</a>
+</li>
+        <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.BaseDataOperation.get_created_keys">(semantiva.data_operations.data_operations.BaseDataOperation method)</a>
+</li>
+        <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataAlgorithm.get_created_keys">(semantiva.data_operations.data_operations.DataAlgorithm method)</a>
+</li>
+        <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataProbe.get_created_keys">(semantiva.data_operations.data_operations.DataProbe method)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.AlgorithmNode.get_created_keys">(semantiva.payload_operations.nodes.AlgorithmNode method)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ContextNode.get_created_keys">(semantiva.payload_operations.nodes.ContextNode method)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.DataNode.get_created_keys">(semantiva.payload_operations.nodes.DataNode method)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeContextInjectorNode.get_created_keys">(semantiva.payload_operations.nodes.ProbeContextInjectorNode method)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeResultCollectorNode.get_created_keys">(semantiva.payload_operations.nodes.ProbeResultCollectorNode method)</a>
 </li>
       </ul></li>
       <li><a href="semantiva.data_io.html#id2">get_data() (semantiva.data_io.data_io.DataSource method)</a>, <a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSource.get_data">[1]</a>
@@ -306,12 +340,22 @@
 </li>
         <li><a href="semantiva.specializations.audio.html#semantiva.specializations.audio.audio_data_io.SingleChannelAudioSource.get_data">(semantiva.specializations.audio.audio_data_io.SingleChannelAudioSource method)</a>
 </li>
-        <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_io.ImageDataSource.get_data">(semantiva.specializations.image.image_data_io.ImageDataSource method)</a>
+        <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_io.ImageDataSource.get_data">(semantiva.specializations.image.image_data_io.ImageDataSource class method)</a>
 </li>
         <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_io.ImageStackSource.get_data">(semantiva.specializations.image.image_data_io.ImageStackSource method)</a>
 </li>
       </ul></li>
-      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.BaseDataOperation.get_operation_parameter_names">get_operation_parameter_names() (semantiva.data_operations.data_operations.BaseDataOperation method)</a>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.get_item">get_item() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextOperation.get_operation_parameter_names">get_operation_parameter_names() (semantiva.context_operations.context_operations.ContextOperation method)</a>
+
+      <ul>
+        <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.BaseDataOperation.get_operation_parameter_names">(semantiva.data_operations.data_operations.BaseDataOperation class method)</a>
+</li>
+      </ul></li>
+      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.BaseDataOperation.get_operation_parameters_with_types">get_operation_parameters_with_types() (semantiva.data_operations.data_operations.BaseDataOperation class method)</a>
 </li>
       <li><a href="semantiva.data_io.html#id5">get_payload() (semantiva.data_io.data_io.PayloadSource method)</a>, <a href="semantiva.data_io.html#semantiva.data_io.data_io.PayloadSource.get_payload">[1]</a>
 
@@ -325,26 +369,32 @@
         <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.ImageStackPayloadRandomGenerator.get_payload">(semantiva.specializations.image.image_loaders_savers_generators.ImageStackPayloadRandomGenerator method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Pipeline.get_probe_results">get_probe_results() (semantiva.payload_operations.payload_operations.Pipeline method)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.pipeline.Pipeline.get_probe_results">get_probe_results() (semantiva.payload_operations.pipeline.Pipeline method)</a>
+</li>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.ComponentLoader.get_registered_modules">get_registered_modules() (semantiva.component_loader.component_loader.ComponentLoader class method)</a>
+</li>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.ComponentLoader.get_registered_paths">get_registered_paths() (semantiva.component_loader.component_loader.ComponentLoader class method)</a>
 </li>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextOperation.get_required_keys">get_required_keys() (semantiva.context_operations.context_operations.ContextOperation method)</a>
 
       <ul>
-        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextPassthrough.get_required_keys">(semantiva.context_operations.context_operations.ContextPassthrough method)</a>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ModelFittingContextOperation.get_required_keys">(semantiva.context_operations.context_operations.ModelFittingContextOperation method)</a>
 </li>
       </ul></li>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextOperation.get_suppressed_keys">get_suppressed_keys() (semantiva.context_operations.context_operations.ContextOperation method)</a>
 
       <ul>
-        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextPassthrough.get_suppressed_keys">(semantiva.context_operations.context_operations.ContextPassthrough method)</a>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ModelFittingContextOperation.get_suppressed_keys">(semantiva.context_operations.context_operations.ModelFittingContextOperation method)</a>
 </li>
       </ul></li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Pipeline.get_timers">get_timers() (semantiva.payload_operations.payload_operations.Pipeline method)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.pipeline.Pipeline.get_timers">get_timers() (semantiva.payload_operations.pipeline.Pipeline method)</a>
 </li>
-      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.get_value">get_value() (semantiva.context_operations.context_types.ContextType method)</a>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.get_value">get_value() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
+
+      <ul>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.get_value">(semantiva.context_operations.context_types.ContextType method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -355,7 +405,9 @@
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_operations.ImageAlgorithm">ImageAlgorithm (class in semantiva.specializations.image.image_operations)</a>
 </li>
-      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageClipping">ImageClipping (class in semantiva.specializations.image.image_algorithms)</a>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageCropper">ImageCropper (class in semantiva.specializations.image.image_algorithms)</a>
+</li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer">ImageCrossSectionInteractiveViewer (class in semantiva.specializations.image.image_viewers)</a>
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.ImageDataRandomGenerator">ImageDataRandomGenerator (class in semantiva.specializations.image.image_loaders_savers_generators)</a>
 </li>
@@ -365,6 +417,8 @@
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_types.ImageDataType">ImageDataType (class in semantiva.specializations.image.image_data_types)</a>
 </li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageInteractiveViewer">ImageInteractiveViewer (class in semantiva.specializations.image.image_viewers)</a>
+</li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageNormalizerAlgorithm">ImageNormalizerAlgorithm (class in semantiva.specializations.image.image_algorithms)</a>
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_io.ImagePayloadSink">ImagePayloadSink (class in semantiva.specializations.image.image_data_io)</a>
@@ -372,6 +426,8 @@
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_operations.ImageProbe">ImageProbe (class in semantiva.specializations.image.image_operations)</a>
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_operations.ImageStackAlgorithm">ImageStackAlgorithm (class in semantiva.specializations.image.image_operations)</a>
+</li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageStackAnimator">ImageStackAnimator (class in semantiva.specializations.image.image_viewers)</a>
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_io.ImageStackDataSink">ImageStackDataSink (class in semantiva.specializations.image.image_data_io)</a>
 </li>
@@ -393,9 +449,17 @@
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_algorithms.ImageSubtraction">ImageSubtraction (class in semantiva.specializations.image.image_algorithms)</a>
 </li>
-      <li><a href="semantiva.data_io.html#id0">input_data_type() (semantiva.data_io.data_io.DataSink method)</a>, <a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSink.input_data_type">[1]</a>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageViewer">ImageViewer (class in semantiva.specializations.image.image_viewers)</a>
+</li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageXYProjectionViewer">ImageXYProjectionViewer (class in semantiva.specializations.image.image_viewers)</a>
+</li>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.ComponentLoader.initialize_default_modules">initialize_default_modules() (semantiva.component_loader.component_loader.ComponentLoader class method)</a>
+</li>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextOperation.input_data_type">input_data_type() (semantiva.context_operations.context_operations.ContextOperation class method)</a>
 
       <ul>
+        <li><a href="semantiva.data_io.html#id0">(semantiva.data_io.data_io.DataSink method)</a>, <a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSink.input_data_type">[1]</a>
+</li>
         <li><a href="semantiva.data_io.html#semantiva.data_io.data_io.PayloadSink.input_data_type">(semantiva.data_io.data_io.PayloadSink method)</a>
 </li>
         <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.BaseDataOperation.input_data_type">(semantiva.data_operations.data_operations.BaseDataOperation class method)</a>
@@ -403,6 +467,8 @@
         <li><a href="semantiva.data_operations.html#id1">(semantiva.data_operations.data_operations.DataCollectionProbe class method)</a>
 </li>
         <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataCollectionProbe.input_data_type">(semantiva.data_operations.data_operations.DataCollectionProbe method)</a>
+</li>
+        <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.FeatureExtractorProbeWrapper.input_data_type">(semantiva.data_operations.data_operations.FeatureExtractorProbeWrapper method)</a>
 </li>
         <li><a href="semantiva.specializations.audio.html#id0">(semantiva.specializations.audio.audio_operations.DualChannelAudioAlgorithm class method)</a>
 </li>
@@ -457,24 +523,36 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Pipeline.inspect">inspect() (semantiva.payload_operations.payload_operations.Pipeline method)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.pipeline.Pipeline.inspect">inspect() (semantiva.payload_operations.pipeline.Pipeline method)</a>
 </li>
-      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.items">items() (semantiva.context_operations.context_types.ContextType method)</a>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.items">items() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
+
+      <ul>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.items">(semantiva.context_operations.context_types.ContextType method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.keys">keys() (semantiva.context_operations.context_types.ContextType method)</a>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.keys">keys() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
+
+      <ul>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.keys">(semantiva.context_operations.context_types.ContextType method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.FigureOption.labelsize">labelsize (semantiva.specializations.image.image_viewers.FigureOption attribute)</a>
+</li>
+      <li><a href="semantiva.configurations.html#semantiva.configurations.load_pipeline_from_yaml.load_pipeline_from_yaml">load_pipeline_from_yaml() (in module semantiva.configurations.load_pipeline_from_yaml)</a>
+</li>
       <li><a href="semantiva.logger.html#semantiva.logger.logger.Logger">Logger (class in semantiva.logger.logger)</a>
 </li>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextOperation.logger">logger (semantiva.context_operations.context_operations.ContextOperation attribute)</a>
@@ -484,7 +562,11 @@
 </li>
         <li><a href="semantiva.logger.html#semantiva.logger.logger.Logger.logger">(semantiva.logger.logger.Logger attribute)</a>
 </li>
-        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Node.logger">(semantiva.payload_operations.payload_operations.Node attribute)</a>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ContextNode.logger">(semantiva.payload_operations.nodes.ContextNode attribute)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.DataNode.logger">(semantiva.payload_operations.nodes.DataNode attribute)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.PipelineNode.logger">(semantiva.payload_operations.nodes.PipelineNode attribute)</a>
 </li>
         <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.PayloadOperation.logger">(semantiva.payload_operations.payload_operations.PayloadOperation attribute)</a>
 </li>
@@ -495,11 +577,21 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ModelFittingContextOperation">ModelFittingContextOperation (class in semantiva.context_operations.context_operations)</a>
+</li>
       <li>
     module
 
       <ul>
         <li><a href="semantiva.html#module-semantiva">semantiva</a>
+</li>
+        <li><a href="semantiva.component_loader.html#module-semantiva.component_loader">semantiva.component_loader</a>
+</li>
+        <li><a href="semantiva.component_loader.html#module-semantiva.component_loader.component_loader">semantiva.component_loader.component_loader</a>
+</li>
+        <li><a href="semantiva.configurations.html#module-semantiva.configurations">semantiva.configurations</a>
+</li>
+        <li><a href="semantiva.configurations.html#module-semantiva.configurations.load_pipeline_from_yaml">semantiva.configurations.load_pipeline_from_yaml</a>
 </li>
         <li><a href="semantiva.context_operations.html#module-semantiva.context_operations">semantiva.context_operations</a>
 </li>
@@ -514,8 +606,6 @@
         <li><a href="semantiva.data_io.html#module-semantiva.data_io.data_io">semantiva.data_io.data_io</a>
 </li>
         <li><a href="semantiva.data_operations.html#module-semantiva.data_operations">semantiva.data_operations</a>
-</li>
-        <li><a href="semantiva.data_operations.html#module-semantiva.data_operations.data_collection_fit_probe">semantiva.data_operations.data_collection_fit_probe</a>
 </li>
         <li><a href="semantiva.data_operations.html#module-semantiva.data_operations.data_operations">semantiva.data_operations.data_operations</a>
 </li>
@@ -533,7 +623,11 @@
 </li>
         <li><a href="semantiva.payload_operations.html#module-semantiva.payload_operations">semantiva.payload_operations</a>
 </li>
+        <li><a href="semantiva.payload_operations.html#module-semantiva.payload_operations.nodes">semantiva.payload_operations.nodes</a>
+</li>
         <li><a href="semantiva.payload_operations.html#module-semantiva.payload_operations.payload_operations">semantiva.payload_operations.payload_operations</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#module-semantiva.payload_operations.pipeline">semantiva.payload_operations.pipeline</a>
 </li>
         <li><a href="semantiva.payload_operations.html#module-semantiva.payload_operations.stop_watch">semantiva.payload_operations.stop_watch</a>
 </li>
@@ -561,6 +655,8 @@
 </li>
         <li><a href="semantiva.specializations.image.html#module-semantiva.specializations.image.image_probes">semantiva.specializations.image.image_probes</a>
 </li>
+        <li><a href="semantiva.specializations.image.html#module-semantiva.specializations.image.image_viewers">semantiva.specializations.image.image_viewers</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -568,11 +664,13 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Node">Node (class in semantiva.payload_operations.payload_operations)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.node_factory">node_factory() (in module semantiva.payload_operations.nodes)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.node_factory">node_factory() (in module semantiva.payload_operations.payload_operations)</a>
+      <li><a href="semantiva.payload_operations.html#id0">nodes (semantiva.payload_operations.pipeline.Pipeline attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.pipeline.Pipeline.nodes">[1]</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#id4">nodes (semantiva.payload_operations.payload_operations.Pipeline attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Pipeline.nodes">[1]</a>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.None">None (semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe attribute)</a>
+</li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.normalize_angle_180">normalize_angle_180() (semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -592,16 +690,28 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_operations.ContextOperation.operate_context">operate_context() (semantiva.context_operations.context_operations.ContextOperation method)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#id2">operation_config (semantiva.payload_operations.payload_operations.Node attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Node.operation_config">[1]</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ContextNode.operation">operation (semantiva.payload_operations.nodes.ContextNode attribute)</a>
+
+      <ul>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.DataNode.operation">(semantiva.payload_operations.nodes.DataNode attribute)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeContextInjectorNode.operation_parameters">operation_parameters (semantiva.payload_operations.payload_operations.ProbeContextInjectorNode attribute)</a>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.PipelineNode.operation">(semantiva.payload_operations.nodes.PipelineNode attribute)</a>
 </li>
+      </ul></li>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ContextNode.operation_config">operation_config (semantiva.payload_operations.nodes.ContextNode attribute)</a>
+
+      <ul>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.DataNode.operation_config">(semantiva.payload_operations.nodes.DataNode attribute)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.PipelineNode.operation_config">(semantiva.payload_operations.nodes.PipelineNode attribute)</a>
+</li>
+      </ul></li>
       <li><a href="semantiva.data_io.html#id3">output_data_type() (semantiva.data_io.data_io.DataSource method)</a>, <a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSource.output_data_type">[1]</a>
 
       <ul>
         <li><a href="semantiva.data_io.html#id6">(semantiva.data_io.data_io.PayloadSource method)</a>, <a href="semantiva.data_io.html#semantiva.data_io.data_io.PayloadSource.output_data_type">[1]</a>
 </li>
-        <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.BaseDataOperation.output_data_type">(semantiva.data_operations.data_operations.BaseDataOperation class method)</a>
+        <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataAlgorithm.output_data_type">(semantiva.data_operations.data_operations.DataAlgorithm class method)</a>
 </li>
         <li><a href="semantiva.specializations.audio.html#id1">(semantiva.specializations.audio.audio_operations.DualChannelAudioAlgorithm class method)</a>
 </li>
@@ -619,7 +729,7 @@
 </li>
         <li><a href="semantiva.specializations.audio.html#semantiva.specializations.audio.audio_operations.SingleChannelExpanderAlgorithm.output_data_type">(semantiva.specializations.audio.audio_operations.SingleChannelExpanderAlgorithm method)</a>
 </li>
-        <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_io.ImageDataSource.output_data_type">(semantiva.specializations.image.image_data_io.ImageDataSource method)</a>
+        <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_io.ImageDataSource.output_data_type">(semantiva.specializations.image.image_data_io.ImageDataSource static method)</a>
 </li>
         <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_io.ImageStackPayloadSource.output_data_type">(semantiva.specializations.image.image_data_io.ImageStackPayloadSource method)</a>
 </li>
@@ -644,6 +754,8 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator">ParametricImageStackGenerator (class in semantiva.specializations.image.image_loaders_savers_generators)</a>
+</li>
       <li><a href="semantiva.execution_tools.html#id0">payload_operation_class (semantiva.execution_tools.tasks.PayloadOperationTask attribute)</a>, <a href="semantiva.execution_tools.html#semantiva.execution_tools.tasks.PayloadOperationTask.payload_operation_class">[1]</a>
 </li>
       <li><a href="semantiva.execution_tools.html#id1">payload_operation_config (semantiva.execution_tools.tasks.PayloadOperationTask attribute)</a>, <a href="semantiva.execution_tools.html#semantiva.execution_tools.tasks.PayloadOperationTask.payload_operation_config">[1]</a>
@@ -666,9 +778,11 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Pipeline">Pipeline (class in semantiva.payload_operations.payload_operations)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.pipeline.Pipeline">Pipeline (class in semantiva.payload_operations.pipeline)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#id5">pipeline_configuration (semantiva.payload_operations.payload_operations.Pipeline attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Pipeline.pipeline_configuration">[1]</a>
+      <li><a href="semantiva.payload_operations.html#id13">pipeline_configuration (semantiva.payload_operations.pipeline.Pipeline attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.pipeline.Pipeline.pipeline_configuration">[1]</a>
+</li>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.PipelineNode">PipelineNode (class in semantiva.payload_operations.nodes)</a>
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.PngImageLoader">PngImageLoader (class in semantiva.specializations.image.image_loaders_savers_generators)</a>
 </li>
@@ -676,11 +790,11 @@
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.PNGImageStackSaver">PNGImageStackSaver (class in semantiva.specializations.image.image_loaders_savers_generators)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeContextInjectorNode">ProbeContextInjectorNode (class in semantiva.payload_operations.payload_operations)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeContextInjectorNode">ProbeContextInjectorNode (class in semantiva.payload_operations.nodes)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeNode">ProbeNode (class in semantiva.payload_operations.payload_operations)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeNode">ProbeNode (class in semantiva.payload_operations.nodes)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.ProbeResultCollectorNode">ProbeResultCollectorNode (class in semantiva.payload_operations.payload_operations)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ProbeResultCollectorNode">ProbeResultCollectorNode (class in semantiva.payload_operations.nodes)</a>
 </li>
       <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.BaseDataOperation.process">process() (semantiva.data_operations.data_operations.BaseDataOperation method)</a>
 
@@ -694,12 +808,20 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.stop_watch.StopWatch.reset">reset() (semantiva.payload_operations.stop_watch.StopWatch method)</a>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.ComponentLoader.register_modules">register_modules() (semantiva.component_loader.component_loader.ComponentLoader class method)</a>
+</li>
+      <li><a href="semantiva.component_loader.html#semantiva.component_loader.component_loader.ComponentLoader.register_paths">register_paths() (semantiva.component_loader.component_loader.ComponentLoader class method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.execution_tools.html#semantiva.execution_tools.tasks.ComputingTask.run">run() (semantiva.execution_tools.tasks.ComputingTask method)</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.stop_watch.StopWatch.reset">reset() (semantiva.payload_operations.stop_watch.StopWatch method)</a>
 </li>
+      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.BaseDataOperation.run">run() (semantiva.data_operations.data_operations.BaseDataOperation class method)</a>
+
+      <ul>
+        <li><a href="semantiva.execution_tools.html#semantiva.execution_tools.tasks.ComputingTask.run">(semantiva.execution_tools.tasks.ComputingTask method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -711,6 +833,34 @@
 
       <ul>
         <li><a href="semantiva.html#module-semantiva">module</a>
+</li>
+      </ul></li>
+      <li>
+    semantiva.component_loader
+
+      <ul>
+        <li><a href="semantiva.component_loader.html#module-semantiva.component_loader">module</a>
+</li>
+      </ul></li>
+      <li>
+    semantiva.component_loader.component_loader
+
+      <ul>
+        <li><a href="semantiva.component_loader.html#module-semantiva.component_loader.component_loader">module</a>
+</li>
+      </ul></li>
+      <li>
+    semantiva.configurations
+
+      <ul>
+        <li><a href="semantiva.configurations.html#module-semantiva.configurations">module</a>
+</li>
+      </ul></li>
+      <li>
+    semantiva.configurations.load_pipeline_from_yaml
+
+      <ul>
+        <li><a href="semantiva.configurations.html#module-semantiva.configurations.load_pipeline_from_yaml">module</a>
 </li>
       </ul></li>
       <li>
@@ -760,13 +910,6 @@
 
       <ul>
         <li><a href="semantiva.data_operations.html#module-semantiva.data_operations">module</a>
-</li>
-      </ul></li>
-      <li>
-    semantiva.data_operations.data_collection_fit_probe
-
-      <ul>
-        <li><a href="semantiva.data_operations.html#module-semantiva.data_operations.data_collection_fit_probe">module</a>
 </li>
       </ul></li>
       <li>
@@ -826,10 +969,24 @@
 </li>
       </ul></li>
       <li>
+    semantiva.payload_operations.nodes
+
+      <ul>
+        <li><a href="semantiva.payload_operations.html#module-semantiva.payload_operations.nodes">module</a>
+</li>
+      </ul></li>
+      <li>
     semantiva.payload_operations.payload_operations
 
       <ul>
         <li><a href="semantiva.payload_operations.html#module-semantiva.payload_operations.payload_operations">module</a>
+</li>
+      </ul></li>
+      <li>
+    semantiva.payload_operations.pipeline
+
+      <ul>
+        <li><a href="semantiva.payload_operations.html#module-semantiva.payload_operations.pipeline">module</a>
 </li>
       </ul></li>
       <li>
@@ -925,6 +1082,13 @@
         <li><a href="semantiva.specializations.image.html#module-semantiva.specializations.image.image_probes">module</a>
 </li>
       </ul></li>
+      <li>
+    semantiva.specializations.image.image_viewers
+
+      <ul>
+        <li><a href="semantiva.specializations.image.html#module-semantiva.specializations.image.image_viewers">module</a>
+</li>
+      </ul></li>
       <li><a href="semantiva.data_io.html#id1">send_data() (semantiva.data_io.data_io.DataSink method)</a>, <a href="semantiva.data_io.html#semantiva.data_io.data_io.DataSink.send_data">[1]</a>
 
       <ul>
@@ -951,10 +1115,22 @@
 </li>
       <li><a href="semantiva.logger.html#semantiva.logger.logger.Logger.set_file_output">set_file_output() (semantiva.logger.logger.Logger method)</a>
 </li>
-      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.set_value">set_value() (semantiva.context_operations.context_types.ContextType method)</a>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.set_item_value">set_item_value() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
 </li>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.set_value">set_value() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
+
+      <ul>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.set_value">(semantiva.context_operations.context_types.ContextType method)</a>
+</li>
+      </ul></li>
       <li><a href="semantiva.logger.html#semantiva.logger.logger.Logger.set_verbose_level">set_verbose_level() (semantiva.logger.logger.Logger method)</a>
 </li>
+      <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataAlgorithm.signature_string">signature_string() (semantiva.data_operations.data_operations.DataAlgorithm class method)</a>
+
+      <ul>
+        <li><a href="semantiva.data_operations.html#semantiva.data_operations.data_operations.DataProbe.signature_string">(semantiva.data_operations.data_operations.DataProbe class method)</a>
+</li>
+      </ul></li>
       <li><a href="semantiva.specializations.audio.html#semantiva.specializations.audio.audio_operations.SingleChannelAudioAlgorithm">SingleChannelAudioAlgorithm (class in semantiva.specializations.audio.audio_operations)</a>
 </li>
       <li><a href="semantiva.specializations.audio.html#semantiva.specializations.audio.audio_data_types.SingleChannelAudioDataType">SingleChannelAudioDataType (class in semantiva.specializations.audio.audio_data_types)</a>
@@ -977,10 +1153,14 @@
 </li>
       <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.stop_watch.StopWatch.stop">stop() (semantiva.payload_operations.stop_watch.StopWatch method)</a>
 </li>
-      <li><a href="semantiva.payload_operations.html#id3">stop_watch (semantiva.payload_operations.payload_operations.Node attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Node.stop_watch">[1]</a>
+      <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.ContextNode.stop_watch">stop_watch (semantiva.payload_operations.nodes.ContextNode attribute)</a>
 
       <ul>
-        <li><a href="semantiva.payload_operations.html#id6">(semantiva.payload_operations.payload_operations.Pipeline attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.payload_operations.Pipeline.stop_watch">[1]</a>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.DataNode.stop_watch">(semantiva.payload_operations.nodes.DataNode attribute)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.nodes.PipelineNode.stop_watch">(semantiva.payload_operations.nodes.PipelineNode attribute)</a>
+</li>
+        <li><a href="semantiva.payload_operations.html#id14">(semantiva.payload_operations.pipeline.Pipeline attribute)</a>, <a href="semantiva.payload_operations.html#semantiva.payload_operations.pipeline.Pipeline.stop_watch">[1]</a>
 </li>
       </ul></li>
       <li><a href="semantiva.payload_operations.html#semantiva.payload_operations.stop_watch.StopWatch">StopWatch (class in semantiva.payload_operations.stop_watch)</a>
@@ -991,13 +1171,21 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe.two_d_gaussian">two_d_gaussian() (semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe method)</a>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator.t_values">t_values (semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator property)</a>
 </li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe.two_d_gaussian">two_d_gaussian() (semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe method)</a>
+
+      <ul>
+        <li><a href="semantiva.specializations.image.html#id10">(semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe method)</a>, <a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.two_d_gaussian">[1]</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDGaussianFitterProbe">TwoDGaussianFitterProbe (class in semantiva.specializations.image.image_probes)</a>
 </li>
       <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_loaders_savers_generators.TwoDGaussianImageGenerator">TwoDGaussianImageGenerator (class in semantiva.specializations.image.image_loaders_savers_generators)</a>
+</li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe">TwoDTiltedGaussianFitterProbe (class in semantiva.specializations.image.image_probes)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1025,12 +1213,28 @@
         <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_data_types.ImageStackDataType.validate">(semantiva.specializations.image.image_data_types.ImageStackDataType method)</a>
 </li>
       </ul></li>
+      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextCollectionType.values">values() (semantiva.context_operations.context_types.ContextCollectionType method)</a>
+
+      <ul>
+        <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.values">(semantiva.context_operations.context_types.ContextType method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="semantiva.context_operations.html#semantiva.context_operations.context_types.ContextType.values">values() (semantiva.context_operations.context_types.ContextType method)</a>
-</li>
       <li><a href="semantiva.logger.html#semantiva.logger.logger.Logger.verbosity_map">verbosity_map (semantiva.logger.logger.Logger attribute)</a>
 </li>
+      <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer.view">view() (semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer class method)</a>
+
+      <ul>
+        <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageInteractiveViewer.view">(semantiva.specializations.image.image_viewers.ImageInteractiveViewer class method)</a>
+</li>
+        <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageStackAnimator.view">(semantiva.specializations.image.image_viewers.ImageStackAnimator class method)</a>
+</li>
+        <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageViewer.view">(semantiva.specializations.image.image_viewers.ImageViewer class method)</a>
+</li>
+        <li><a href="semantiva.specializations.image.html#semantiva.specializations.image.image_viewers.ImageXYProjectionViewer.view">(semantiva.specializations.image.image_viewers.ImageXYProjectionViewer class method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 

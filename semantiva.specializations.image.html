@@ -47,6 +47,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">semantiva</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="semantiva.html">semantiva package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="semantiva.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="semantiva.component_loader.html">semantiva.component_loader package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="semantiva.configurations.html">semantiva.configurations package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="semantiva.context_operations.html">semantiva.context_operations package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="semantiva.data_io.html">semantiva.data_io package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="semantiva.data_operations.html">semantiva.data_operations package</a></li>
@@ -124,12 +126,12 @@ Performs the addition operation between the input image and the added image.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="semantiva.specializations.image.image_algorithms.ImageClipping">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_algorithms.</span></span><span class="sig-name descname"><span class="pre">ImageClipping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context_observer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_algorithms.ImageClipping" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_algorithms.ImageCropper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_algorithms.</span></span><span class="sig-name descname"><span class="pre">ImageCropper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context_observer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_algorithms.ImageCropper" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#semantiva.specializations.image.image_operations.ImageAlgorithm" title="semantiva.specializations.image.image_operations.ImageAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageAlgorithm</span></code></a></p>
-<p>A class for clipping a region from an image.</p>
+<p>A class for cropping a region from an image.</p>
 <p>This class inherits from <cite>ImageAlgorithm</cite> and implements an operation
-to clip a rectangular region from the input image.</p>
+to crop a rectangular region from the input image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -262,7 +264,7 @@ Subclasses must implement the <cite>_send_data</cite> method to define how the d
 Subclasses must implement the <cite>_get_data</cite> method to define how the data is retrieved.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="semantiva.specializations.image.image_data_io.ImageDataSource.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_data_io.ImageDataSource.get_data" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_data_io.ImageDataSource.get_data" title="Link to this definition"></a></dt>
 <dd><p>Fetch and return <cite>ImageDataType</cite> data.</p>
 <p>This method calls the subclass-implemented <cite>_get_data</cite> method to retrieve the data.</p>
 <dl class="field-list simple">
@@ -277,7 +279,7 @@ Subclasses must implement the <cite>_get_data</cite> method to define how the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="semantiva.specializations.image.image_data_io.ImageDataSource.output_data_type">
-<span class="sig-name descname"><span class="pre">output_data_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_data_io.ImageDataSource.output_data_type" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_data_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_data_io.ImageDataSource.output_data_type" title="Link to this definition"></a></dt>
 <dd><p>Define the type of data provided by this source.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -499,7 +501,7 @@ Validates that the input data is a 2D NumPy array.</p>
 <dt class="sig sig-object py" id="semantiva.specializations.image.image_data_types.ImageStackDataType">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_data_types.</span></span><span class="sig-name descname"><span class="pre">ImageStackDataType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_data_types.ImageStackDataType" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="semantiva.data_types.html#semantiva.data_types.data_types.DataCollectionType" title="semantiva.data_types.data_types.DataCollectionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataCollectionType</span></code></a>[<a class="reference internal" href="#semantiva.specializations.image.image_data_types.ImageDataType" title="semantiva.specializations.image.image_data_types.ImageDataType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageDataType</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]</p>
-<p>A class representing a stack of image data, derived from DataCollecton.</p>
+<p>A class representing a stack of image data, derived from DataCollection.</p>
 <p>This class is designed to handle multi-dimensional image data (e.g., a stack of 2D images)
 and provides validation to ensure that the input is a NumPy array.</p>
 <dl class="field-list simple">
@@ -662,6 +664,28 @@ numbered sequentially (e.g., “frame_000.png”, “frame_001.png”, …).</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_loaders_savers_generators.</span></span><span class="sig-name descname"><span class="pre">ParametricImageStackGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parametric_expressions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_ranges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_generator_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#semantiva.specializations.image.image_data_io.ImageStackSource" title="semantiva.specializations.image.image_data_io.ImageStackSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageStackSource</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_frames</strong> (<em>int</em>)</p></li>
+<li><p><strong>parametric_expressions</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>)</p></li>
+<li><p><strong>param_ranges</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em><em>]</em>)</p></li>
+<li><p><strong>image_generator</strong> (<em>Any</em>)</p></li>
+<li><p><strong>image_generator_params</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator.t_values">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">t_values</span></span><a class="headerlink" href="#semantiva.specializations.image.image_loaders_savers_generators.ParametricImageStackGenerator.t_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="semantiva.specializations.image.image_loaders_savers_generators.PngImageLoader">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_loaders_savers_generators.</span></span><span class="sig-name descname"><span class="pre">PngImageLoader</span></span><a class="headerlink" href="#semantiva.specializations.image.image_loaders_savers_generators.PngImageLoader" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#semantiva.specializations.image.image_data_io.ImageDataSource" title="semantiva.specializations.image.image_data_io.ImageDataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageDataSource</span></code></a></p>
@@ -681,7 +705,7 @@ numbered sequentially (e.g., “frame_000.png”, “frame_001.png”, …).</p>
 <dt class="sig sig-object py" id="semantiva.specializations.image.image_loaders_savers_generators.TwoDGaussianImageGenerator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_loaders_savers_generators.</span></span><span class="sig-name descname"><span class="pre">TwoDGaussianImageGenerator</span></span><a class="headerlink" href="#semantiva.specializations.image.image_loaders_savers_generators.TwoDGaussianImageGenerator" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#semantiva.specializations.image.image_data_io.ImageDataSource" title="semantiva.specializations.image.image_data_io.ImageDataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageDataSource</span></code></a></p>
-<p>Generates a 2D Gaussian image.</p>
+<p>Generates an image with a 2D Gaussian signal with optional rotation.</p>
 </dd></dl>
 
 </section>
@@ -995,6 +1019,294 @@ the fit parameters along with the goodness-of-fit score (R²).</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_probes.</span></span><span class="sig-name descname"><span class="pre">TwoDTiltedGaussianFitterProbe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#semantiva.specializations.image.image_operations.ImageProbe" title="semantiva.specializations.image.image_operations.ImageProbe"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageProbe</span></code></a></p>
+<p>A probe that fits a <strong>tilted 2D Gaussian function</strong> to an image, extracting
+Gaussian parameters including <strong>rotation angle</strong> (θ) and ensuring stable fitting.</p>
+<p>This implementation improves <strong>fit consistency</strong> by:
+- Using <strong>second-moment (σ_x, σ_y) estimation</strong> for better initial guesses.
+- Ensuring <strong>principal axes are uniquely defined</strong> to prevent swaps.
+- Incorporating <strong>weighting techniques</strong> from optical beam propagation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logger</strong> (<a class="reference internal" href="semantiva.logger.html#semantiva.logger.logger.Logger" title="semantiva.logger.logger.Logger"><em>Logger</em></a><em> | </em><em>None</em>)</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.None">
+<span class="sig-name descname"><span class="pre">None</span></span><a class="headerlink" href="#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.None" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>inherits methods and attributes from <cite>ImageProbe</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.two_d_gaussian">
+<span class="sig-name descname"><span class="pre">two_d_gaussian</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.two_d_gaussian" title="Link to this definition"></a></dt>
+<dd><p>Defines the <strong>rotated 2D Gaussian function</strong>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.estimate_initial_params">
+<span class="sig-name descname"><span class="pre">estimate_initial_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.estimate_initial_params" title="Link to this definition"></a></dt>
+<dd><p>Provides <strong>better initial estimates</strong> for stable fitting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>ndarray</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.calculate_r_squared">
+<span class="sig-name descname"><span class="pre">calculate_r_squared</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.calculate_r_squared" title="Link to this definition"></a></dt>
+<dd><p>Computes the <strong>R² goodness-of-fit score</strong>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe._operation">
+<span class="sig-name descname"><span class="pre">_operation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe._operation" title="Link to this definition"></a></dt>
+<dd><p>Fits a <strong>tilted</strong> Gaussian function and extracts parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">calculate_r_squared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fitted_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd><p>Compute the <strong>R² goodness-of-fit</strong> score for the fitted Gaussian model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference internal" href="#semantiva.specializations.image.image_data_types.ImageDataType" title="semantiva.specializations.image.image_data_types.ImageDataType"><em>ImageDataType</em></a>) – The input image data.</p></li>
+<li><p><strong>fitted_data</strong> (<em>np.ndarray</em>) – The computed fitted Gaussian model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The R² goodness-of-fit score (1 = perfect fit, 0 = poor fit).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">estimate_initial_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id9" title="Link to this definition"></a></dt>
+<dd><p>Estimate initial parameters for stable fitting using <strong>second-moment analysis</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>np.ndarray</em>) – The input image data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Estimated parameters (amplitude, x_center, y_center, σ_x, σ_y, θ).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.normalize_angle_180">
+<span class="sig-name descname"><span class="pre">normalize_angle_180</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_probes.TwoDTiltedGaussianFitterProbe.normalize_angle_180" title="Link to this definition"></a></dt>
+<dd><p>Normalize an angle to the range [0, 180] degrees.</p>
+<p>Ensures that angles differing by 180 degrees (or -90, 90, 270)
+are treated equivalently, keeping results within [0, 180].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>angle</strong> (<em>float</em>) – Input angle in degrees.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Normalized angle in the range [0, 180].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">two_d_gaussian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amplitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
+<dd><p>Define a <strong>rotated 2D Gaussian function</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xy</strong> (<em>tuple</em>) – A tuple of (x, y) coordinate grids.</p></li>
+<li><p><strong>amplitude</strong> (<em>float</em>) – Peak intensity of the Gaussian.</p></li>
+<li><p><strong>xo</strong> (<em>float</em>) – X-coordinate of the Gaussian center.</p></li>
+<li><p><strong>yo</strong> (<em>float</em>) – Y-coordinate of the Gaussian center.</p></li>
+<li><p><strong>sigma_x</strong> (<em>float</em>) – Standard deviation along the <strong>primary axis</strong>.</p></li>
+<li><p><strong>sigma_y</strong> (<em>float</em>) – Standard deviation along the <strong>perpendicular axis</strong>.</p></li>
+<li><p><strong>theta</strong> (<em>float</em>) – Rotation angle (in radians).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <strong>raveled</strong> evaluated 2D Gaussian function.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-semantiva.specializations.image.image_viewers">
+<span id="semantiva-specializations-image-image-viewers-module"></span><h2>semantiva.specializations.image.image_viewers module<a class="headerlink" href="#module-semantiva.specializations.image.image_viewers" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.FigureOption">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_viewers.</span></span><span class="sig-name descname"><span class="pre">FigureOption</span></span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.FigureOption" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TypedDict</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.FigureOption.figsize">
+<span class="sig-name descname"><span class="pre">figsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code><span class="pre">]</span></em><a class="headerlink" href="#semantiva.specializations.image.image_viewers.FigureOption.figsize" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.FigureOption.labelsize">
+<span class="sig-name descname"><span class="pre">labelsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#semantiva.specializations.image.image_viewers.FigureOption.labelsize" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_viewers.</span></span><span class="sig-name descname"><span class="pre">ImageCrossSectionInteractiveViewer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An interactive viewer for 2D images with cross-sections.
+The viewer displays an image with vertical and horizontal cross-sections.
+The user can interact with the image by moving the cross-sections, changing the colormap,
+toggling log scale, and auto-scaling the profiles.</p>
+<p>Note: This viewer is designed for Jupyter Notebook. In order to be correctly displayed,
+please add on the first cell of the notebook the following line:
+%matplotlib ipympl. This will enable the interactive mode for matplotlib.
+Also take into account that the interactive mode may interferes with
+other viewers in the notebook.</p>
+<dl class="simple">
+<dt>Example of usage:</dt><dd><p>viewer = ImageCrossSectionInteractiveViewer.view(image_data)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer.view">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageCrossSectionInteractiveViewer.view" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_data</strong> (<a class="reference internal" href="#semantiva.specializations.image.image_data_types.ImageDataType" title="semantiva.specializations.image.image_data_types.ImageDataType"><em>ImageDataType</em></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageInteractiveViewer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_viewers.</span></span><span class="sig-name descname"><span class="pre">ImageInteractiveViewer</span></span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageInteractiveViewer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An extension of ImageViewer that supports interactivity in Jupyter Notebook.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageInteractiveViewer.FIGURE_OPTIONS">
+<span class="sig-name descname"><span class="pre">FIGURE_OPTIONS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <a class="reference internal" href="#semantiva.specializations.image.image_viewers.FigureOption" title="semantiva.specializations.image.image_viewers.FigureOption"><code class="xref py py-class docutils literal notranslate"><span class="pre">FigureOption</span></code></a><span class="pre">]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Large</span> <span class="pre">(1000x800)':</span> <span class="pre">{'figsize':</span> <span class="pre">(10,</span> <span class="pre">8),</span> <span class="pre">'labelsize':</span> <span class="pre">14},</span> <span class="pre">'Medium</span> <span class="pre">(700x500)':</span> <span class="pre">{'figsize':</span> <span class="pre">(7,</span> <span class="pre">5),</span> <span class="pre">'labelsize':</span> <span class="pre">12},</span> <span class="pre">'Small</span> <span class="pre">(500x400)':</span> <span class="pre">{'figsize':</span> <span class="pre">(5,</span> <span class="pre">4),</span> <span class="pre">'labelsize':</span> <span class="pre">10}}</span></em><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageInteractiveViewer.FIGURE_OPTIONS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageInteractiveViewer.view">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'viridis'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageInteractiveViewer.view" title="Link to this definition"></a></dt>
+<dd><p>Create an interactive image viewer with ipywidgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference internal" href="#semantiva.specializations.image.image_data_types.ImageDataType" title="semantiva.specializations.image.image_data_types.ImageDataType"><em>ImageDataType</em></a>)</p></li>
+<li><p><strong>title</strong> (<em>str</em>)</p></li>
+<li><p><strong>colorbar</strong> (<em>bool</em>)</p></li>
+<li><p><strong>cmap</strong> (<em>str</em>)</p></li>
+<li><p><strong>log_scale</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageStackAnimator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_viewers.</span></span><span class="sig-name descname"><span class="pre">ImageStackAnimator</span></span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageStackAnimator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A concrete implementation that processes an image stack into an animation.</p>
+<p>The generated animation cycles through each image in the stack, allowing visualization of
+dynamic or sequential image data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageStackAnimator.view">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_stack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageStackAnimator.view" title="Link to this definition"></a></dt>
+<dd><p>Creates and displays an animation using matplotlib.animation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_stack</strong> (<a class="reference internal" href="#semantiva.specializations.image.image_data_types.ImageStackDataType" title="semantiva.specializations.image.image_data_types.ImageStackDataType"><em>ImageStackDataType</em></a>) – Stack of images to animate.</p></li>
+<li><p><strong>frame_duration</strong> (<em>int</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageViewer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_viewers.</span></span><span class="sig-name descname"><span class="pre">ImageViewer</span></span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageViewer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A concrete implementation that processes an image with customizable settings.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageViewer.view">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'viridis'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageViewer.view" title="Link to this definition"></a></dt>
+<dd><p>Display an image with optional title, colorbar, colormap, and log scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference internal" href="#semantiva.specializations.image.image_data_types.ImageDataType" title="semantiva.specializations.image.image_data_types.ImageDataType"><em>ImageDataType</em></a>)</p></li>
+<li><p><strong>title</strong> (<em>str</em>)</p></li>
+<li><p><strong>colorbar</strong> (<em>bool</em>)</p></li>
+<li><p><strong>cmap</strong> (<em>str</em>)</p></li>
+<li><p><strong>log_scale</strong> (<em>bool</em>)</p></li>
+<li><p><strong>xlabel</strong> (<em>str</em>)</p></li>
+<li><p><strong>ylabel</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageXYProjectionViewer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semantiva.specializations.image.image_viewers.</span></span><span class="sig-name descname"><span class="pre">ImageXYProjectionViewer</span></span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageXYProjectionViewer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An Viewer for 2D images with X and Y projections.
+The viewer displays an image with vertical and horizontal projections.
+The user can set the colormap and set the log scale for the image.</p>
+<p>Note: This viewer is designed for Jupyter Notebook.</p>
+<dl class="simple">
+<dt>Example of usage:</dt><dd><p>viewer = ImageXYProjectionViewer.view(image_data)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="semantiva.specializations.image.image_viewers.ImageXYProjectionViewer.view">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colormap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hot'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#semantiva.specializations.image.image_viewers.ImageXYProjectionViewer.view" title="Link to this definition"></a></dt>
+<dd><p>Display an image with X and Y projections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> (<a class="reference internal" href="#semantiva.specializations.image.image_data_types.ImageDataType" title="semantiva.specializations.image.image_data_types.ImageDataType"><em>ImageDataType</em></a>)</p>
 </dd>
 </dl>
 </dd></dl>
