@@ -43,6 +43,7 @@ from typing import Any, Dict, Sequence, Type, Union, Literal, cast
 import numpy as np
 
 from semantiva.data_io.data_io import DataSource
+from semantiva.data_processors import DataOperation, DataProbe
 from semantiva.data_types import DataCollectionType
 from semantiva.utils.safe_eval import ExpressionEvaluator, ExpressionError
 
@@ -257,8 +258,159 @@ def _compile_parametric_expressions(
     return compiled
 
 
+def _build_sweep_for_datasource(
+    *,
+    element_source: Type[DataSource],
+    collection_output: Type[DataCollectionType],
+    vars: Dict[str, VarSpec],
+    parametric_expressions: Dict[str, str] | None = None,
+    static_params: Dict[str, Any] | None = None,
+    include_independent: bool = False,
+    mode: Literal["product", "zip"] = "product",
+    broadcast: bool = False,
+    name: str | None = None,
+    evaluator: ExpressionEvaluator | None = None,
+) -> Type[DataSource]:
+
+    _validate_element_source_signature(
+        element_source=element_source,
+        vars=vars,
+        parametric_expressions=parametric_expressions,
+        static_params=static_params,
+        include_independent=include_independent,
+    )
+
+    compiled_exprs = _compile_parametric_expressions(
+        parametric_expressions or {}, set(vars.keys()), evaluator
+    )
+
+    normalized_static: Dict[str, Any] = (
+        {} if static_params is None else cast(Dict[str, Any], static_params)
+    )
+
+    processed_vars = vars
+
+    class ParametricSweepSource(DataSource):
+        _element_source = element_source
+        _collection_output = collection_output
+        _vars = processed_vars
+        _parametric_expressions = parametric_expressions or {}
+        _compiled_exprs = compiled_exprs
+        _static_params: Dict[str, Any] = normalized_static
+        _include_independent = include_independent
+        _mode = mode
+        _broadcast = broadcast
+
+        @classmethod
+        def output_data_type(cls) -> Type[DataCollectionType]:  # type: ignore[type-var]
+            return cls._collection_output
+
+        @classmethod
+        def get_context_requirements(cls) -> list[str]:
+            required = []
+            for spec in cls._vars.values():
+                if isinstance(spec, FromContext):
+                    required.append(spec.key)
+            return required
+
+        @classmethod
+        def get_processing_parameter_names(cls) -> list[str]:
+            return cls.get_context_requirements()
+
+        @classmethod
+        def get_created_keys(cls) -> list[str]:
+            return [f"{var}_values" for var in cls._vars]
+
+        @classmethod
+        def _get_data(cls, **kwargs) -> DataCollectionType:  # type: ignore[type-var]
+            ctx = kwargs.pop("context", None)
+            sequences, created = _materialize_sequences(
+                vars=cls._vars,
+                params=kwargs,
+            )
+            if ctx is not None:
+                if hasattr(ctx, "set_value"):
+                    for k, v in created.items():
+                        ctx.set_value(k, v)
+                elif hasattr(ctx, "update"):
+                    ctx.update(created)
+            items = []
+            for sweep_args in _iterate_sweep(
+                sequences, mode=cls._mode, broadcast=cls._broadcast
+            ):
+                call_params = dict(cls._static_params)
+                if cls._include_independent:
+                    call_params.update(sweep_args)
+                for out_param, fn in cls._compiled_exprs.items():
+                    call_params[out_param] = fn(**sweep_args)
+                elem = cls._element_source.get_data(**call_params)
+                items.append(elem)
+            return cls._collection_output.from_list(items)
+
+    # Create proper signature for _get_data to expose FromContext parameters
+    def create_get_data_with_signature():
+        import inspect
+
+        # Collect FromContext parameter names
+        from_context_params = []
+        for spec in processed_vars.values():
+            if isinstance(spec, FromContext):
+                from_context_params.append(spec.key)
+
+        if from_context_params:
+            # Create signature with explicit FromContext parameters
+            params = [
+                inspect.Parameter("cls", inspect.Parameter.POSITIONAL_OR_KEYWORD),
+            ]
+            for param_name in from_context_params:
+                params.append(
+                    inspect.Parameter(
+                        param_name, inspect.Parameter.POSITIONAL_OR_KEYWORD
+                    )
+                )
+            params.append(inspect.Parameter("kwargs", inspect.Parameter.VAR_KEYWORD))
+
+            new_sig = inspect.Signature(params)
+            ParametricSweepSource._get_data.__func__.__signature__ = new_sig
+
+    # Create proper signature for _get_data to expose FromContext parameters
+
+    create_get_data_with_signature()
+
+    ParametricSweepSource.__name__ = name or f"{element_source.__name__}ParametricSweep"
+    ParametricSweepSource.__doc__ = f"Parametric sweep data source for {element_source.__name__} producing {collection_output.__name__}."
+    return ParametricSweepSource
+
+
+def _build_sweep_for_dataoperation() -> Type[Any]:
+    raise NotImplementedError(
+        "element_kind='DataOperation' not implemented yet. Add builder in _BUILDER_DISPATCH."
+    )
+
+
+def _build_sweep_for_dataprobe() -> Type[Any]:
+    raise NotImplementedError(
+        "element_kind='DataProbe' not implemented yet. Add builder in _BUILDER_DISPATCH."
+    )
+
+
+def _build_sweep_for_dataprocessor() -> Type[Any]:
+    # Placeholder specifically for your future DataProcessor support
+    raise NotImplementedError(
+        "element_kind='DataProcessor' is a placeholder. Implement this builder when ready."
+    )
+
+
+_BUILDER_DISPATCH: dict[str, callable] = {
+    "DataSource": _build_sweep_for_datasource,
+    "DataOperation": _build_sweep_for_dataoperation,
+    "DataProbe": _build_sweep_for_dataprobe,
+    "DataProcessor": _build_sweep_for_dataprocessor,
+}
+
+
 class ParametricSweepFactory:
-    """Factory for creating parametric sweep data sources."""
+    """Factory for creating parametric sweep"""
 
     @staticmethod
     def create(
@@ -277,14 +429,11 @@ class ParametricSweepFactory:
         name: str | None = None,
         expression_evaluator: ExpressionEvaluator | None = None,
     ) -> Type[DataSource]:
-        if element_kind != "DataSource":
+        if element_kind != "DataSource" and element_kind != "DataOperation":
             raise NotImplementedError(
-                "Sweep factory currently supports element_kind='DataSource' only. "
-                "API is future-ready for DataOperation/DataProbe but not implemented in this epic."
+                "Sweep factory currently supports element_kind='DataSource' or 'DataOperation'. "
+                "API is future-ready for DataProbe but not implemented in this epic."
             )
-        element_source: Type[DataSource] = element  # type: ignore[assignment]
-        if not issubclass(element_source, DataSource):
-            raise TypeError("element must be a DataSource subclass")
         if not issubclass(collection_output, DataCollectionType):
             raise TypeError("collection_output must be a DataCollectionType subclass")
         if not vars:
@@ -294,115 +443,24 @@ class ParametricSweepFactory:
 
         evaluator = expression_evaluator or ExpressionEvaluator()
 
-        _validate_element_source_signature(
-            element_source=element_source,
+        try:
+            builder = _BUILDER_DISPATCH[element_kind]
+        except KeyError as e:
+            available = ", ".join(sorted(_BUILDER_DISPATCH))
+            raise NotImplementedError(
+                f"Unknown element_kind='{element_kind}'. Available: {available}"
+            ) from e
+
+        # Builders decide their own type checks & validation
+        return builder(
+            element_source=element,
+            collection_output=collection_output,
             vars=vars,
             parametric_expressions=parametric_expressions,
             static_params=static_params,
             include_independent=include_independent,
+            mode=mode,
+            broadcast=broadcast,
+            name=name,
+            evaluator=evaluator,
         )
-
-        compiled_exprs = _compile_parametric_expressions(
-            parametric_expressions or {}, set(vars.keys()), evaluator
-        )
-
-        normalized_static: Dict[str, Any] = (
-            {} if static_params is None else cast(Dict[str, Any], static_params)
-        )
-
-        processed_vars = vars
-
-        class ParametricSweepSource(DataSource):
-            _element_source = element_source
-            _collection_output = collection_output
-            _vars = processed_vars
-            _parametric_expressions = parametric_expressions or {}
-            _compiled_exprs = compiled_exprs
-            _static_params: Dict[str, Any] = normalized_static
-            _include_independent = include_independent
-            _mode = mode
-            _broadcast = broadcast
-
-            @classmethod
-            def output_data_type(cls) -> Type[DataCollectionType]:  # type: ignore[type-var]
-                return cls._collection_output
-
-            @classmethod
-            def get_context_requirements(cls) -> list[str]:
-                required = []
-                for spec in cls._vars.values():
-                    if isinstance(spec, FromContext):
-                        required.append(spec.key)
-                return required
-
-            @classmethod
-            def get_processing_parameter_names(cls) -> list[str]:
-                return cls.get_context_requirements()
-
-            @classmethod
-            def get_created_keys(cls) -> list[str]:
-                return [f"{var}_values" for var in cls._vars]
-
-            @classmethod
-            def _get_data(cls, **kwargs) -> DataCollectionType:  # type: ignore[type-var]
-                ctx = kwargs.pop("context", None)
-                sequences, created = _materialize_sequences(
-                    vars=cls._vars,
-                    params=kwargs,
-                )
-                if ctx is not None:
-                    if hasattr(ctx, "set_value"):
-                        for k, v in created.items():
-                            ctx.set_value(k, v)
-                    elif hasattr(ctx, "update"):
-                        ctx.update(created)
-                items = []
-                for sweep_args in _iterate_sweep(
-                    sequences, mode=cls._mode, broadcast=cls._broadcast
-                ):
-                    call_params = dict(cls._static_params)
-                    if cls._include_independent:
-                        call_params.update(sweep_args)
-                    for out_param, fn in cls._compiled_exprs.items():
-                        call_params[out_param] = fn(**sweep_args)
-                    elem = cls._element_source.get_data(**call_params)
-                    items.append(elem)
-                return cls._collection_output.from_list(items)
-
-        # Create proper signature for _get_data to expose FromContext parameters
-        def create_get_data_with_signature():
-            import inspect
-
-            # Collect FromContext parameter names
-            from_context_params = []
-            for spec in processed_vars.values():
-                if isinstance(spec, FromContext):
-                    from_context_params.append(spec.key)
-
-            if from_context_params:
-                # Create signature with explicit FromContext parameters
-                params = [
-                    inspect.Parameter("cls", inspect.Parameter.POSITIONAL_OR_KEYWORD),
-                ]
-                for param_name in from_context_params:
-                    params.append(
-                        inspect.Parameter(
-                            param_name, inspect.Parameter.POSITIONAL_OR_KEYWORD
-                        )
-                    )
-                params.append(
-                    inspect.Parameter("kwargs", inspect.Parameter.VAR_KEYWORD)
-                )
-
-                new_sig = inspect.Signature(params)
-                ParametricSweepSource._get_data.__func__.__signature__ = new_sig
-
-        # Create proper signature for _get_data to expose FromContext parameters
-
-        create_get_data_with_signature()
-
-        ParametricSweepSource.__name__ = (
-            name or f"{element_source.__name__}ParametricSweep"
-        )
-        ParametricSweepSource.__doc__ = f"Parametric sweep data source for {element_source.__name__} producing {collection_output.__name__}."
-        return ParametricSweepSource
